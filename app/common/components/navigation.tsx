@@ -37,23 +37,18 @@ const menus = [
     items: [],
   },
   {
-    name: "Jobs",
-    to: "/jobs",
+    name: "상품/서비스",
+    to: "/products",
     items: [],
   },
   {
-    name: "Community",
-    to: "/community",
+    name: "기업분석",
+    to: "/reserch",
     items: [],
   },
   {
-    name: "IdeasGPT",
-    to: "/ideas",
-  },
-  {
-    name: "Teams",
-    to: "/teams",
-    items: [],
+    name: "소식과 홍보",
+    to: "/news",
   },
 ];
 
@@ -78,11 +73,15 @@ export default function Navigation({
             {menus.map((menu) => (
               <NavigationMenuItem key={menu.name}>
                 {menu.items ? (
-                  <>
-                    <Link to={menu.to}>
-                      <NavigationMenuTrigger>{menu.name}</NavigationMenuTrigger>
-                    </Link>
-                    <NavigationMenuContent>
+                  <Link className={navigationMenuTriggerStyle()} to={menu.to}>
+                    {menu.name}
+                    {
+                      //<NavigationMenuTrigger>{menu.name}</NavigationMenuTrigger>}}
+                    }
+                  </Link>
+                ) : (
+                  //<>
+                  /*{  <NavigationMenuContent>
                       <ul className="grid w-[600px] font-light gap-3 p-4 grid-cols-2">
                         {menu.items?.map((item) => (
                           <NavigationMenuItem
@@ -108,9 +107,8 @@ export default function Navigation({
                           </NavigationMenuItem>
                         ))}
                       </ul>
-                    </NavigationMenuContent>
-                  </>
-                ) : (
+                    </NavigationMenuContent> }*/
+                  //</>
                   <Link className={navigationMenuTriggerStyle()} to={menu.to}>
                     {menu.name}
                   </Link>
